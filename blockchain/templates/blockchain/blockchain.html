@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>My Login Page &mdash; Bootstrap 4 Login Page Snippet</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/my-login.css' %}">
+	<style type="text/css">
+		
+	</style>
+</head>
+<body >
+</body>
+	<nav class="navbar navbar-light bg-light">
+ 		 <span class="navbar-brand mb-0 h1">BLOCKCHAIN</span>
+    	<div class="btn-group-horizontal navbar-btn pull-right">
+    		<a class="btn btn-primary" href="/login" target="_blank" role="button">Login</a>
+    		<a class="btn btn-primary" href="/register" target="_blank" role="button">Register</a>
+		</div>
+	</nav>
+	<div class="container" >
+		{% for u in users %}
+		<div class="row" style="background: skyblue;padding: 20px 20px; margin: 40px 20px">
+			<ul>
+				<li style="list-style-type: none;font-weight:bold">Index : {{ u.id }}</li>
+				<li style="list-style-type: none; font-weight:bold">Timestamp : {{ u.time_stamp }}</li>
+				<li style="list-style-type: none; font-weight:bold">Previous Hash : {{ u.previous_hash }}</li>
+				<li style="list-style-type: none; font-weight:bold;font-style: italic">Current Hash : {{ u.current_hash }}</li>
+				<li style="list-style-type: none; font-weight:bold">Sender : {{ u.sender }} </li>	
+				<li style="list-style-type: none; font-weight:bold">Receiver : {{ u.receiver }}</li>
+				<li style="list-style-type: none; font-weight:bold">Amount(INR) : {{ u.amount }} </li>			
+			</ul>
+		</div>
+		{% endfor %}
+	</div>
+	
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/my-login.js' %}"></script>
+</body>
+</html>
